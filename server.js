@@ -4,7 +4,9 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 require("dotenv").config();
 
-mongoose.connect(process.env.DATABASE_URL);
+mongoose.connect(
+  "mongodb+srv://mlaminsngom:G5nGeEs3HS1S4O7e@cluster0.rdm9fzk.mongodb.net/connectx?retryWrites=true&w=majority"
+);
 
 const db = mongoose.connection;
 db.on("error", (error) => console.error(error));
@@ -16,6 +18,6 @@ app.use(cors());
 const appointmentsRouter = require("./routes/appointments");
 app.use("/appointments", appointmentsRouter);
 
-app.listen(process.env.PORT, () => {
+app.listen(3000, () => {
   console.log("http://localhost:3000");
 });
