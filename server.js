@@ -16,6 +16,6 @@ app.use(cors());
 const appointmentsRouter = require("./routes/appointments");
 app.use("/appointments", appointmentsRouter);
 
-app.listen(3000, () => {
+app.listen(process.env.PORT, () => {
   console.log("http://localhost:3000");
 });
